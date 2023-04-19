@@ -33,10 +33,10 @@ Resources:
       Runtime: python3.8
       Environment:
         Variables:
-          Url: 'http://publicdata.landregistry.gov.uk/market-trend-data/house-price-index-data/Average-prices-Property-Type-2019-04.csv'
+          Url: 'https://www.thegreatmorel.com/maps/geojson/layer/46,47,48,49,50,51/?full=no&full_icon_url=no&listmarkers=1'
           S3Bucket: !Ref Bucket
           LogLevel: INFO
-          Filename: 'avg-price-property-uk.csv'
+          Filename: 'morels.csv'
       Policies:
         - S3WritePolicy: 
             BucketName: !Ref Bucket
@@ -44,7 +44,7 @@ Resources:
         UpdateEvent:
           Type: Schedule
           Properties:
-            Schedule: cron(0 8 * * ? *)
+            Schedule: rate(1 day)
 
   Bucket:
     Type: AWS::S3::Bucket

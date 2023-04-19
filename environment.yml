@@ -26,4 +26,4 @@ dependencies:
   - s3fs
   - pip
   - pip:
-    - aws-sam-cli==0.51
+    - aws-sam-cli
