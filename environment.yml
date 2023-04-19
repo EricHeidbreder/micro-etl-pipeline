@@ -25,5 +25,6 @@ dependencies:
   - matplotlib
   - s3fs
   - pip
+  - boto3
   - pip:
     - aws-sam-cli
